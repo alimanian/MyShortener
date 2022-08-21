@@ -1,3 +1,128 @@
+@import "./font/vazirmatn.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+    *, ::before, ::after {
+        @apply rtl text-right;
+        font-family: "Vazirmatn RD", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+    @supports (font-variation-settings: normal){
+        *, ::before, ::after {
+            font-family: "Vazirmatn VRD", "Vazirmatn RD", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-feature-settings: "ss01", "tnum";
+        }
+    }
+    svg.icon{
+        @apply stroke-slate-500 dark:stroke-slate-400 stroke-[1.25px];
+        fill: none;
+    }
+    svg{
+        @apply w-8 h-8;
+    }
+
+    h1{
+        @apply text-[2rem] leading-[150%] font-black;
+    }
+    h2{
+        @apply text-[1.75rem] leading-[150%] font-extrabold;
+    }
+    h3{
+        @apply text-[1.5rem] leading-[150%] font-extrabold;
+    }
+    h4{
+        @apply text-[1.25rem] leading-[150%] font-bold;
+    }
+    h5{
+        @apply text-[1rem] leading-[150%] font-bold;
+    }
+    h6{
+        @apply text-[.75rem] leading-[150%] font-bold;
+    }
+    .body-1{
+        @apply text-[1rem] leading-[150%] font-normal;
+    }
+    .body-2{
+        @apply text-[.875rem] leading-[150%] font-normal;
+    }
+    .body-3{
+        @apply text-[.75rem] leading-[150%] font-normal;
+    }
+    :focus-visible{
+        @apply outline-none;
+    }
+    a{
+        @apply text-primary-400;
+    }
+    a > svg.icon{
+        @apply transition-all hover:stroke-primary-400;
+    }
+    #livewire-error{
+        @apply inset-0;
+    }
+}
+
+@layer components {
+    .form-control .form-input{
+        @apply relative mb-3;
+    }
+    .form-control .form-input input{
+        @apply bg-slate-100 dark:bg-slate-800 text-slate-500 w-full px-3 py-4 rounded-lg transition
+        border border-transparent hover:border hover:border-primary-200 dark:hover:border-slate-700
+        focus:border focus:border-primary-200 dark:focus:border-slate-700;
+    }
+    .form-control .form-input label{
+        @apply text-slate-400 absolute -translate-y-1/2 top-1/2 right-3
+        transition-all rounded-sm select-none pointer-events-none;
+    }
+    .form-control .form-input input:focus ~ label, .form-control .form-input input:not(:placeholder-shown) ~ label{
+        @apply text-[85%] top-0 right-2 px-1 bg-gradient-to-b from-white to-slate-100
+        dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-800 rounded-3xl;
+    }
+    .form-control .form-error{
+        @apply relative bg-gradient-to-l from-rose-50 to-white
+        dark:bg-gradient-to-l dark:from-rose-900/40 dark:to-slate-900
+        text-sm text-rose-500 -mt-2 mb-2 px-3 py-1 font-light;
+    }
+    .form-control .form-error::before{
+        @apply h-full w-1 bg-rose-400 dark:bg-rose-500 top-0 right-0 absolute rounded-l-md;
+        content: '';
+    }
+    .form-control .form-input .form-input-password-icon{
+        @apply icon absolute -translate-y-1/2 top-1/2 left-3 w-7 h-7 !stroke-slate-400
+        hover:!stroke-slate-500 fill-transparent transition cursor-pointer;
+    }
+
+
+
+
+    .form-control .form-button{
+        @apply flex flex-row items-center justify-center w-full py-4 px-3 rounded-lg mb-3 font-medium;
+    }
+    .form-control .form-button.form-button-primary{
+        @apply bg-primary-500 dark:bg-slate-800 text-white dark:text-primary-400 dark:border
+        dark:border-primary-500/25 transition hover:bg-primary-600 dark:hover:bg-primary-500
+        dark:hover:text-white;
+    }
+    .form-control .form-button.loading{
+        @apply pointer-events-none;
+    }
+    .form-control .form-button.form-button-primary.loading{
+        @apply bg-primary-400 dark:bg-slate-900;
+    }
+    .form-control .form-button.form-button-primary.loading > section > svg.animate-spin{
+        @apply dark:!text-primary-400;
+    }
+}
+
+@layer utilities {
+    .ltr{
+        direction: ltr;
+    }
+    .rtl{
+        direction: rtl;
+    }
+}
