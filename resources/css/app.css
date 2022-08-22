@@ -24,22 +24,22 @@
         @apply w-8 h-8;
     }
 
-    h1{
+    h1, .h1{
         @apply text-[2rem] leading-[150%] font-black;
     }
-    h2{
+    h2, .h2{
         @apply text-[1.75rem] leading-[150%] font-extrabold;
     }
-    h3{
+    h3, .h3{
         @apply text-[1.5rem] leading-[150%] font-extrabold;
     }
-    h4{
+    h4, .h4{
         @apply text-[1.25rem] leading-[150%] font-bold;
     }
-    h5{
+    h5, .h5{
         @apply text-[1rem] leading-[150%] font-bold;
     }
-    h6{
+    h6, .h6{
         @apply text-[.75rem] leading-[150%] font-bold;
     }
     .body-1{
@@ -66,6 +66,9 @@
 }
 
 @layer components {
+    .form-control{
+        @apply w-full;
+    }
     .form-control .form-input{
         @apply relative mb-3;
     }
@@ -115,6 +118,46 @@
     }
     .form-control .form-button.form-button-primary.loading > section > svg.animate-spin{
         @apply dark:!text-primary-400;
+    }
+
+
+    .dashboard-menu{
+        @apply flex flex-col space-y-1;
+    }
+    .dashboard-menu .menu-item{
+        @apply mx-3;
+    }
+    .dashboard-menu .menu-item > a{
+        @apply flex items-center space-x-2 space-x-reverse py-3.5 px-2.5 rounded-lg transition;
+    }
+    .dashboard-menu .menu-item > a > .icon{
+        @apply w-6 h-6 !stroke-neutral-500;
+    }
+    .dashboard-menu .menu-item > a > .text{
+        @apply body-1 text-neutral-500;
+    }
+
+    .dashboard-menu .menu-item.menu-item-active > a{
+        @apply bg-primary-500;
+    }
+    .dashboard-menu .menu-item.menu-item-active > a > .text{
+        @apply text-white;
+    }
+    .dashboard-menu .menu-item.menu-item-active > a > .icon{
+        @apply !stroke-white;
+    }
+
+    .dashboard-menu .menu-item:not(.menu-item-active) > a:hover,
+    .dashboard-menu .menu-item:not(.menu-item-active) > a:focus{
+        @apply bg-primary-50;
+    }
+    .dashboard-menu .menu-item:not(.menu-item-active) > a:hover > .text,
+    .dashboard-menu .menu-item:not(.menu-item-active) > a:focus > .text{
+        @apply text-primary-500;
+    }
+    .dashboard-menu .menu-item:not(.menu-item-active) > a:hover > .icon,
+    .dashboard-menu .menu-item:not(.menu-item-active) > a:focus > .icon{
+        @apply !stroke-primary-500;
     }
 }
 

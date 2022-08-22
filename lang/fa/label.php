@@ -6,5 +6,8 @@ return [
     'password' => 'رمز عبور',
     'verify_code' => 'کد تأیید',
     'new_password' => 'رمز عبور جدید',
+    'email' => 'ایمیل',
+    'new_password' => 'رمز عبور جدید',
+    '' => '',
     '' => '',
 ];

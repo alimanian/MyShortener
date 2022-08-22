@@ -176,6 +176,7 @@ return [
         'userArr.phone_number' => 'شماره موبایل',
         'userArr.password' => 'رمز عبور',
         'userArr.verify_code' => 'کد تأیید',
+        'userArr.email' => 'ایمیل',
         '' => '',
     ],
 

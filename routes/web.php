@@ -3,6 +3,10 @@
 use App\Http\Livewire\Auth\Forget;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Auth\Register;
+use App\Http\Livewire\Dashboard\Counter;
+use App\Http\Livewire\Dashboard\Users\Create as UsersCreate;
+use App\Http\Livewire\Dashboard\Users\Edit as UsersEdit;
+use App\Http\Livewire\Dashboard\Users\Index as UsersIndex;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,4 +28,11 @@ Route::middleware('guest')->group(function (){
     Route::get('login', Login::class)->name('login');
     Route::get('register', Register::class)->name('register');
     Route::get('forget', Forget::class)->name('forget');
+});
+
+Route::prefix('dashboard')->middleware('auth')->group(function (){
+    Route::get('', Counter::class)->name('dashboard');
+    Route::get('users', UsersIndex::class)->name('dashboard.users');
+    Route::get('users/create', UsersCreate::class)->name('dashboard.users.create');
+    Route::get('users/edit/{user}', UsersEdit::class)->name('dashboard.users.edit');
 });
