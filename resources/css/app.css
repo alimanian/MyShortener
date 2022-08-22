@@ -63,6 +63,10 @@
     #livewire-error{
         @apply inset-0;
     }
+
+    .tailwindcss-pagination{
+
+    }
 }
 
 @layer components {
@@ -110,6 +114,9 @@
         dark:border-primary-500/25 transition hover:bg-primary-600 dark:hover:bg-primary-500
         dark:hover:text-white;
     }
+    .form-control .form-button.form-button-small{
+        @apply py-3 px-2;
+    }
     .form-control .form-button.loading{
         @apply pointer-events-none;
     }
@@ -118,6 +125,13 @@
     }
     .form-control .form-button.form-button-primary.loading > section > svg.animate-spin{
         @apply dark:!text-primary-400;
+    }
+
+    .button-link{
+        @apply px-3 py-3 rounded-lg;
+    }
+    .button-link.button-link-secondary{
+        @apply bg-neutral-700 text-white;
     }
 
 
@@ -158,6 +172,14 @@
     .dashboard-menu .menu-item:not(.menu-item-active) > a:hover > .icon,
     .dashboard-menu .menu-item:not(.menu-item-active) > a:focus > .icon{
         @apply !stroke-primary-500;
+    }
+
+
+    .dashboard-content-box{
+        @apply bg-white rounded-lg border border-neutral-200 px-3 pt-4 pb-6;
+    }
+    .dashboard-content-box .title{
+        @apply h3 text-neutral-600;
     }
 }
 

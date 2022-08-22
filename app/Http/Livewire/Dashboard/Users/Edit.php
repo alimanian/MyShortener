@@ -4,12 +4,13 @@ namespace App\Http\Livewire\Dashboard\Users;
 
 use App\Actions\User\UpdateUser;
 use App\Actions\User\UserValidationRule;
+use App\Http\Livewire\Traits\WithToast;
 use App\Models\User;
 use Livewire\Component;
 
 class Edit extends Component
 {
-    use UserValidationRule;
+    use UserValidationRule, WithToast;
 
     public string $prefix = 'userArr.';
     public array $userArr;
@@ -30,6 +31,7 @@ class Edit extends Component
 
         (new UpdateUser())->update($this->userArr['id'], $this->userArr);
 
+        $this->toast(trans('toast.Successful user updated'));
         return redirect(route('dashboard.users'));
     }
 }

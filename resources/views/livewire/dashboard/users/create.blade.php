@@ -1,6 +1,4 @@
-<div class="bg-white rounded-lg border border-neutral-200 px-3 py-4">
-    <h1 class="h3 text-neutral-700 mb-3">افزودن کاربر</h1>
-    <hr class="mb-5">
+<x-box name="dashboard-content" :title="__('heading.Add User')">
     <x-form wire:submit.prevent="create" class="w-full">
         <section class="flex flex-col sm:flex-row sm:space-x-reverse sm:space-x-3">
             <x-input :name="$prefix.'first_name'" type="text" maxlength="40" autofocus>
@@ -21,8 +19,13 @@
                 {{ __('label.password') }}
             </x-input>
         </section>
+        <div class="flex justify-between items-center">
+            <x-button class="form-button-primary form-button-small !mb-0 !w-24 max-w-full" type="submit" form="create">
+                {{ __('button.Add') }}
+            </x-button>
+            <a class="button-link button-link-secondary" href="{{ route('dashboard.users') }}">
+                {{ __('link.back') }}
+            </a>
+        </div>
     </x-form>
-    <x-button class="form-button-primary !mb-0 !w-24 max-w-full" type="submit" form="create">
-        {{ __('button.Add') }}
-    </x-button>
-</div>
+</x-box>

@@ -1,6 +1,4 @@
-<div class="bg-white rounded-lg border border-neutral-200 px-3 py-4">
-    <h1 class="h3 text-neutral-700 mb-3">ویرایش کاربر</h1>
-    <hr class="mb-5">
+<x-box name="dashboard-content" :title="__('heading.Edit User')">
     <x-form wire:submit.prevent="update" class="w-full">
         <section class="flex flex-col sm:flex-row sm:space-x-reverse sm:space-x-3">
             <x-input :name="$prefix.'first_name'" type="text" maxlength="40" autofocus>
@@ -18,8 +16,13 @@
                 {{ __('label.email') }}
             </x-input>
         </section>
+        <div class="flex justify-between items-center">
+            <x-button class="form-button-primary form-button-small !mb-0 !w-24 max-w-full" type="submit" form="update">
+                {{ __('button.Update') }}
+            </x-button>
+            <a class="button-link button-link-secondary" href="{{ route('dashboard.users') }}">
+                {{ __('link.back') }}
+            </a>
+        </div>
     </x-form>
-    <x-button class="form-button-primary !mb-0 !w-24 max-w-full" type="submit" form="update">
-        {{ __('button.Update') }}
-    </x-button>
-</div>
+</x-box>

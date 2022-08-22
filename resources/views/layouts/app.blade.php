@@ -10,15 +10,15 @@
     @vite('resources/css/app.css')
 </head>
 <body class="bg-neutral-50 min-h-screen w-full">
-<header class="p-6">
+<header>
     @include('layouts.includes.svgs')
-    <aside class="bg-white border border-neutral-200 w-[16rem] min-h-[calc(100vh-3rem)] rounded-xl">
+    <aside class="fixed top-6 right-6 bg-white border border-neutral-200 w-[16rem] h-[calc(100vh-3rem)] rounded-xl">
         <figure class="flex flex-col items-center my-5 space-y-2">
             <img class="w-20 h-20 rounded-full" src="{{ gravatar_image(auth()->user()->email, 128) }}" alt="">
             <figcaption class="body-1">علی مانیان</figcaption>
             <span class="body-2">مدیر در کوتاه کننده لینک من</span>
         </figure>
-        <nav>
+        <nav class="h-[calc(100vh-14.45rem)] overflow-y-auto py-2">
             <ul class="dashboard-menu">
                 <li class="menu-item @if(request()->routeIs('dashboard')) menu-item-active @endif">
                     <a href="{{ route('dashboard') }}">
@@ -66,7 +66,7 @@
         </nav>
     </aside>
 </header>
-<main class="absolute top-6 right-[17.5rem] mr-4 ml-6 w-[calc(100%-20rem)]">
+<main class="mr-[18.5rem] ml-6 my-6">
     <div class="bg-white border border-neutral-200 rounded-lg px-2 py-3 flex justify-between mb-3">
         <div class="flex items-center space-x-reverse space-x-1.5 text-neutral-500">
             <svg class="icon w-6 h-6"><use xlink:href="#location"/></svg>
@@ -83,6 +83,7 @@
 <footer>
     @livewireScripts
     @vite('resources/js/app.js')
+    <x-sweet-alert />
 </footer>
 </body>
 </html>

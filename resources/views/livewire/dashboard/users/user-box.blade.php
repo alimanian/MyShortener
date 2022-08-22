@@ -3,19 +3,19 @@
         {{ $index + 1 }}
     </th>
     <th class="px-6 py-4 font-normal">
-        {{ $user['first_name'] }}
+        {{ $user->first_name }}
     </th>
     <td class="px-6 py-4">
-        {{ $user['last_name'] }}
+        {{ $user->last_name }}
     </td>
     <td class="px-6 py-4 text-center">
-        {{ $user['phone_number'] }}
+        {{ $user->phone_number }}
     </td>
     <td class="px-6 py-4 text-left">
-        {{ $user['email'] }}
+        {{ $user->email }}
     </td>
     <td class="px-6 py-4 flex justify-center items-center space-x-reverse space-x-1">
-        <a href="{{ route('dashboard.users.edit', ['user' => $user['id']]) }}">
+        <a href="{{ route('dashboard.users.edit', ['user' => $user->id]) }}">
             <svg class="icon w-6 h-6"><use xlink:href="#edit"/></svg>
         </a>
         <button type="button" wire:click="delete">
