@@ -36,7 +36,7 @@
         </thead>
         <tbody>
         @foreach($users as $index => $user)
-            <livewire:dashboard.users.user-box :user="$user" :index="$index" :wire:key="$user['id']">
+            <livewire:dashboard.users.user-box :user="$user" :index="$users->firstItem() + $index" :wire:key="$user['id']">
         @endforeach
         </tbody>
     </table>

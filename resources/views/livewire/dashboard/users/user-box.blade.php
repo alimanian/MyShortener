@@ -1,10 +1,10 @@
 <tr class="bg-white">
     <th scope="row" class="px-6 py-4 text-center">
-        {{ $index + 1 }}
+        {{ $index }}
     </th>
-    <th class="px-6 py-4 font-normal">
+    <td class="px-6 py-4">
         {{ $user->first_name }}
-    </th>
+    </td>
     <td class="px-6 py-4">
         {{ $user->last_name }}
     </td>
