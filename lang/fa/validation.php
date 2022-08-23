@@ -177,6 +177,8 @@ return [
         'userArr.password' => 'رمز عبور',
         'userArr.verify_code' => 'کد تأیید',
         'userArr.email' => 'ایمیل',
+        'roleArr.name' => 'نام',
+        'roleArr.label' => 'توضیح',
         '' => '',
     ],
 

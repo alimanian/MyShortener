@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Auth;
 
-use App\Actions\User\CreateNewUser;
+use App\Actions\User\CreateNewRole;
 use App\Actions\User\UserValidationRule;
 use App\Actions\VerifyCode\VerifyCode;
 use App\Http\Livewire\Traits\WithRateLimiting;
@@ -48,7 +48,7 @@ class Register extends Component
 
     protected function actionAfterCodeIsValid(): \Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
     {
-        $user = (new CreateNewUser())->create($this->userArr);
+        $user = (new CreateNewRole())->create($this->userArr);
         # TODO Run the user registration event. This item will be added in the future.
         auth()->login($user);
         # TODO DELETE Verify Code

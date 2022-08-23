@@ -12,4 +12,18 @@ return [
         'type'  => 'success',
         'title' => 'کاربر با موفقیت به روزرسانی شد.',
     ],
+
+
+    'Successful role removal' => [
+        'type'  => 'success',
+        'title' => 'نقش با موفقیت حذف شد.',
+    ],
+    'Successful role creation' => [
+        'type'  => 'success',
+        'title' => 'نقش با موفقیت ایجاد شد.',
+    ],
+    'Successful role updated' => [
+        'type'  => 'success',
+        'title' => 'نقش با موفقیت به روزرسانی شد.',
+    ],
 ];

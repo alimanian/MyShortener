@@ -46,16 +46,18 @@
                 </li>
                 <li class="menu-item">
                     <a href="">
-                        <svg class="icon"><use xlink:href="#lock"/></svg>
-                        <span class="text">{{ __('menu.access') }}</span>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="">
                         <svg class="icon"><use xlink:href="#menu"/></svg>
                         <span class="text">{{ __('menu.categories') }}</span>
                     </a>
                 </li>
+                @can('show-roles')
+                    <li class="menu-item @if(request()->routeIs('dashboard.roles')) menu-item-active @endif">
+                        <a href="{{ route('dashboard.roles') }}">
+                            <svg class="icon"><use xlink:href="#lock"/></svg>
+                            <span class="text">{{ __('menu.roles') }}</span>
+                        </a>
+                    </li>
+                @endcan
                 <li class="menu-item">
                     <a href="">
                         <svg class="icon"><use xlink:href="#setting"/></svg>

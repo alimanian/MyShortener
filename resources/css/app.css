@@ -64,8 +64,36 @@
         @apply inset-0;
     }
 
-    .tailwindcss-pagination{
+    [type="checkbox"], [type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding: 0;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+        print-color-adjust: exact;
+        display: inline-block;
+        vertical-align: middle;
+        background-origin: border-box;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        flex-shrink: 0;
+        height: 1rem;
+        width: 1rem;
+    }
 
+    [type="checkbox"]:checked, [type="radio"]:checked {
+        border-color: transparent;
+        background-color: currentColor;
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    [type="checkbox"]:checked {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
     }
 }
 
@@ -101,6 +129,24 @@
     .form-control .form-input .form-input-password-icon{
         @apply icon absolute -translate-y-1/2 top-1/2 left-3 w-7 h-7 !stroke-slate-400
         hover:!stroke-slate-500 fill-transparent transition cursor-pointer;
+    }
+
+    .form-control .form-input-checkbox input{
+        @apply w-4 border border-neutral-300 cursor-pointer rounded text-primary-500 transition-all
+         align-middle;
+    }
+    .form-control .form-input-checkbox input:focus{
+        box-shadow: none;
+        outline: none;
+    }
+    .form-control .form-input-checkbox label{
+        @apply text-neutral-600 select-none cursor-pointer transition-all text-[90%];
+    }
+    .form-control .form-input-checkbox input:checked{
+        @apply border-primary-500;
+    }
+    .form-control .form-input-checkbox input:checked ~ label{
+        @apply text-neutral-700;
     }
 
 
