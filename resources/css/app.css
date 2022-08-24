@@ -104,7 +104,8 @@
     .form-control .form-input{
         @apply relative mb-3;
     }
-    .form-control .form-input input{
+    .form-control .form-input input,
+    .form-control .form-input textarea{
         @apply bg-slate-100 dark:bg-slate-800 text-slate-500 w-full px-3 py-4 rounded-lg transition
         border border-transparent hover:border hover:border-primary-200 dark:hover:border-slate-700
         focus:border focus:border-primary-200 dark:focus:border-slate-700;
@@ -113,7 +114,8 @@
         @apply text-slate-400 absolute -translate-y-1/2 top-1/2 right-3
         transition-all rounded-sm select-none pointer-events-none;
     }
-    .form-control .form-input input:focus ~ label, .form-control .form-input input:not(:placeholder-shown) ~ label{
+    .form-control .form-input input:focus ~ label, .form-control .form-input input:not(:placeholder-shown) ~ label,
+    .form-control .form-input textarea:focus ~ label, .form-control .form-input textarea:not(:placeholder-shown) ~ label{
         @apply text-[85%] top-0 right-2 px-1 bg-gradient-to-b from-white to-slate-100
         dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-800 rounded-3xl;
     }

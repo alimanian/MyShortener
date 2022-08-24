@@ -44,8 +44,8 @@
                         <span class="text">{{ __('menu.users') }}</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="">
+                <li class="menu-item @if(request()->routeIs('dashboard.categories')) menu-item-active @endif">
+                    <a href="{{ route('dashboard.categories') }}">
                         <svg class="icon"><use xlink:href="#menu"/></svg>
                         <span class="text">{{ __('menu.categories') }}</span>
                     </a>

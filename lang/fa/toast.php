@@ -26,4 +26,17 @@ return [
         'type'  => 'success',
         'title' => 'نقش با موفقیت به روزرسانی شد.',
     ],
+
+    'Successful category removal' => [
+        'type'  => 'success',
+        'title' => 'دسته‌بندی با موفقیت حذف شد.',
+    ],
+    'Successful category creation' => [
+        'type'  => 'success',
+        'title' => 'دسته‌بندی با موفقیت ایجاد شد.',
+    ],
+    'Successful category updated' => [
+        'type'  => 'success',
+        'title' => 'دسته‌بندی با موفقیت به روزرسانی شد.',
+    ],
 ];

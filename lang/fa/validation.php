@@ -179,6 +179,9 @@ return [
         'userArr.email' => 'ایمیل',
         'roleArr.name' => 'نام',
         'roleArr.label' => 'توضیح',
+        'categoryArr.title' => 'عنوان',
+        'categoryArr.slug' => 'نامک',
+        'categoryArr.description' => 'توضیحات',
         '' => '',
     ],
 
