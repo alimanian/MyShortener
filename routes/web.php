@@ -43,6 +43,7 @@ Route::middleware('guest')->group(function (){
 
 Route::get('logout', function (){
     auth()->logout();
+    return redirect('/');
 })->middleware(['auth'])->name('logout');
 
 Route::prefix('dashboard')->middleware('auth')->group(function (){

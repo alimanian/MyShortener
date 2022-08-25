@@ -8,19 +8,23 @@ use App\Http\Livewire\Traits\WithToast;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
 use Livewire\Component;
 
 class Create extends Component
 {
-    use UserValidationRule, WithToast;
+    use UserValidationRule, WithToast, AuthorizesRequests;
+
 
     public string $prefix = 'userArr.';
     public array $userArr;
 
     public function mount()
     {
+        $this->authorize('create-users');
+
         $this->userArr = [];
     }
 

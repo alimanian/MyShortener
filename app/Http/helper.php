@@ -8,7 +8,7 @@ if (!function_exists('array_prefix')) {
 }
 
 if (!function_exists('gravatar_image')) {
-    function gravatar_image(string $email, int $size = 64): string
+    function gravatar_image(?string $email = null, int $size = 64): string
     {
         return 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($email))) . '?s=' . $size;
     }

@@ -3,16 +3,21 @@
 namespace App\Http\Livewire\Dashboard\Links;
 
 use App\Models\Link;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
 
 class Statistics extends Component
 {
+    use AuthorizesRequests;
+
     public Link $link;
     public $statistics;
     public $period;
 
     public function mount(Link $link)
     {
+        $this->authorize('statistics-links');
+
         $this->link = $link;
         $this->statistics = 'browser';
         $this->period = 1;

@@ -6,17 +6,20 @@ use App\Actions\User\UpdateUser;
 use App\Actions\User\UserValidationRule;
 use App\Http\Livewire\Traits\WithToast;
 use App\Models\User;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
 
 class Edit extends Component
 {
-    use UserValidationRule, WithToast;
+    use UserValidationRule, WithToast, AuthorizesRequests;
 
     public string $prefix = 'userArr.';
     public array $userArr;
 
     public function mount(User $user)
     {
+        $this->authorize('update-users');
+
         $this->userArr = $user->toArray();
     }
 

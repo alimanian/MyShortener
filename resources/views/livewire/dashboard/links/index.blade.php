@@ -1,5 +1,5 @@
 <x-box name="dashboard-content" :title="__('heading.Links')">
-    @can('create-categories')
+    @can('create-links')
         <x-slot:header-icon>
             <a href="{{ route('dashboard.links.create') }}">
                 <svg class="icon w-6 h-6 !stroke-primary-500">

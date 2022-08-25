@@ -4,16 +4,23 @@ namespace App\Http\Livewire\Dashboard\Users;
 
 use App\Http\Livewire\Traits\WithToast;
 use App\Models\User as UserModel;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
 use Livewire\WithPagination;
 
 class Index extends Component
 {
-    use WithPagination, WithToast;
+    use WithPagination, WithToast, AuthorizesRequests;
+
 
     public $search;
 
     protected $listeners = ['userDeleted' => 'userDelete'];
+
+    public function mount()
+    {
+        $this->authorize('show-users');
+    }
 
     public function render()
     {

@@ -1,11 +1,13 @@
 <x-box name="dashboard-content" :title="__('heading.Users')">
-    <x-slot:header-icon>
-        <a href="{{ route('dashboard.users.create') }}">
-            <svg class="icon w-6 h-6 !stroke-primary-500">
-                <use xlink:href="#add"/>
-            </svg>
-        </a>
-    </x-slot:header-icon>
+    @can('create-users')
+        <x-slot:header-icon>
+            <a href="{{ route('dashboard.users.create') }}">
+                <svg class="icon w-6 h-6 !stroke-primary-500">
+                    <use xlink:href="#add"/>
+                </svg>
+            </a>
+        </x-slot:header-icon>
+    @endcan
     <x-slot:header-search class="test">
         <x-input name="search" model="debounce.250ms" type="text" maxlength="255">
             {{ __('label.search') }}
