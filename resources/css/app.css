@@ -17,7 +17,7 @@
         }
     }
     svg.icon{
-        @apply stroke-slate-500 dark:stroke-slate-400 stroke-[1.25px];
+        @apply stroke-slate-500 stroke-[1.25px];
         fill: none;
     }
     svg{
@@ -106,9 +106,14 @@
     }
     .form-control .form-input input,
     .form-control .form-input textarea{
-        @apply bg-slate-100 dark:bg-slate-800 text-slate-500 w-full px-3 py-4 rounded-lg transition
-        border border-transparent hover:border hover:border-primary-200 dark:hover:border-slate-700
-        focus:border focus:border-primary-200 dark:focus:border-slate-700;
+        @apply bg-slate-100 text-slate-500 w-full px-3 py-4 rounded-lg transition
+        border border-transparent hover:border hover:border-primary-200
+        focus:border focus:border-primary-200;
+    }
+    .form-select{
+        @apply bg-slate-100 text-slate-500 px-3 py-4 rounded-lg transition
+        border border-transparent hover:border hover:border-primary-200
+        focus:border focus:border-primary-200 relative mb-3 w-full;
     }
     .form-control .form-input label{
         @apply text-slate-400 absolute -translate-y-1/2 top-1/2 right-3
@@ -117,15 +122,14 @@
     .form-control .form-input input:focus ~ label, .form-control .form-input input:not(:placeholder-shown) ~ label,
     .form-control .form-input textarea:focus ~ label, .form-control .form-input textarea:not(:placeholder-shown) ~ label{
         @apply text-[85%] top-0 right-2 px-1 bg-gradient-to-b from-white to-slate-100
-        dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-800 rounded-3xl;
+        rounded-3xl;
     }
     .form-control .form-error{
         @apply relative bg-gradient-to-l from-rose-50 to-white
-        dark:bg-gradient-to-l dark:from-rose-900/40 dark:to-slate-900
         text-sm text-rose-500 -mt-2 mb-2 px-3 py-1 font-light;
     }
     .form-control .form-error::before{
-        @apply h-full w-1 bg-rose-400 dark:bg-rose-500 top-0 right-0 absolute rounded-l-md;
+        @apply h-full w-1 bg-rose-400 top-0 right-0 absolute rounded-l-md;
         content: '';
     }
     .form-control .form-input .form-input-password-icon{
@@ -158,9 +162,8 @@
         @apply flex flex-row items-center justify-center w-full py-4 px-3 rounded-lg mb-3 font-medium;
     }
     .form-control .form-button.form-button-primary{
-        @apply bg-primary-500 dark:bg-slate-800 text-white dark:text-primary-400 dark:border
-        dark:border-primary-500/25 transition hover:bg-primary-600 dark:hover:bg-primary-500
-        dark:hover:text-white;
+        @apply bg-primary-500 text-white
+        transition hover:bg-primary-600;
     }
     .form-control .form-button.form-button-small{
         @apply py-3 px-2;
@@ -169,10 +172,7 @@
         @apply pointer-events-none;
     }
     .form-control .form-button.form-button-primary.loading{
-        @apply bg-primary-400 dark:bg-slate-900;
-    }
-    .form-control .form-button.form-button-primary.loading > section > svg.animate-spin{
-        @apply dark:!text-primary-400;
+        @apply bg-primary-400;
     }
 
     .button-link{

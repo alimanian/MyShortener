@@ -14,5 +14,13 @@ return [
     'title' => 'عنوان',
     'slug' => 'نامک',
     'description' => 'توضیحات',
+    'destination' => 'لینک اصلی',
+    'link_slug' => 'نامک',
+    'link_title' => 'عنوان (اختیاری)',
+    'link_category' => 'دسته‌بندی (اختیاری)',
+    'uncategorized' => 'بدون دسته‌بندی',
+    'link_description' => 'توضیحات (اختیاری)',
+    'link_is_active' => 'لینک فعال باشد',
+    'link_code' => 'کد ریدایرکت',
     '' => '',
 ];

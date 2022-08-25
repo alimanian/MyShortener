@@ -39,4 +39,17 @@ return [
         'type'  => 'success',
         'title' => 'دسته‌بندی با موفقیت به روزرسانی شد.',
     ],
+
+    'Successful link removal' => [
+        'type'  => 'success',
+        'title' => 'لینک با موفقیت حذف شد.',
+    ],
+    'Successful link creation' => [
+        'type'  => 'success',
+        'title' => 'لینک با موفقیت ایجاد شد.',
+    ],
+    'Successful link updated' => [
+        'type'  => 'success',
+        'title' => 'لینک با موفقیت به روزرسانی شد.',
+    ],
 ];

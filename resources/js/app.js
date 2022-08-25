@@ -1,5 +1,7 @@
 import Alpine from 'alpinejs'
 import Swal from 'sweetalert2';
+import QRCodeStyling from 'qr-code-styling';
+
 window.Alpine = Alpine
 
 Alpine.start()
@@ -45,3 +47,17 @@ window.addEventListener('swal-toast', event => {
         }
     });
 });
+
+window.generateQrCode = (link, id) => {
+    const canvas = document.querySelector(`#${id}`);
+    canvas.innerHTML = '';
+    (new QRCodeStyling({
+        width: 200,
+        height: 200,
+        data: link
+    })).append(canvas);
+};
+
+window.downloadQrCode = (id) => {
+    document.querySelector(`#qr-download-${id}`).href = document.querySelector(`#qr-code-${id} > canvas`).toDataURL("image/png");
+};

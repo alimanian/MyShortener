@@ -15,8 +15,12 @@
     <aside class="fixed top-6 right-6 bg-white border border-neutral-200 w-[16rem] h-[calc(100vh-3rem)] rounded-xl">
         <figure class="flex flex-col items-center my-5 space-y-2">
             <img class="w-20 h-20 rounded-full" src="{{ gravatar_image(auth()->user()->email, 128) }}" alt="">
-            <figcaption class="body-1">علی مانیان</figcaption>
-            <span class="body-2">مدیر در کوتاه کننده لینک من</span>
+            <figcaption class="body-1">{{ auth()->user()->fullname() }}</figcaption>
+            <div class="body-2">
+                <span class="bg-primary-50 text-primary-500 px-1 rounded">{{ auth()->user()->roles()->first()->name }}</span>
+                <span>در</span>
+                <span class="bg-neutral-100 px-1 rounded text-neutral-500">{{ config('app.name') }}</span>
+            </div>
         </figure>
         <nav class="h-[calc(100vh-14.45rem)] overflow-y-auto py-2">
             <ul class="dashboard-menu">
@@ -26,16 +30,10 @@
                         <span class="text">{{ __('menu.counter') }}</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="">
+                <li class="menu-item @if(request()->routeIs('dashboard.links')) menu-item-active @endif">
+                    <a href="{{ route('dashboard.links') }}">
                         <svg class="icon"><use xlink:href="#link"/></svg>
                         <span class="text">{{ __('menu.links') }}</span>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="">
-                        <svg class="icon"><use xlink:href="#scan"/></svg>
-                        <span class="text">{{ __('menu.barcodes') }}</span>
                     </a>
                 </li>
                 <li class="menu-item @if(request()->routeIs('dashboard.users')) menu-item-active @endif">

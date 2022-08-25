@@ -10,7 +10,8 @@ return [
     'Description' => 'توضیحات',
     'Title' => 'عنوان',
     'Slug' => 'نامک',
-    '' => '',
-    '' => '',
+    'Destination' => 'مقصد',
+    'Number of clicks' => 'کلیک',
+    'Category' => 'دسته‌بندی',
     '' => '',
 ];

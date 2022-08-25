@@ -32,7 +32,8 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function setPasswordAttribute($value) {
+    public function setPasswordAttribute($value)
+    {
         $this->attributes['password'] = Hash::make($value);
     }
 
@@ -43,11 +44,16 @@ class User extends Authenticatable
 
     public function hasRole($roles)
     {
-        return !! $roles->intersect($this->roles)->all();
+        return !!$roles->intersect($this->roles)->all();
     }
 
     public function hasPermission($permission)
     {
         return $this->hasRole($permission->roles);
+    }
+
+    public function fullname()
+    {
+        return $this->first_name . ' ' . $this->last_name;
     }
 }

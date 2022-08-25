@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LinkShortener;
 use App\Http\Livewire\Auth\Forget;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Auth\Register;
@@ -13,6 +14,9 @@ use App\Http\Livewire\Dashboard\Roles\Index as RolesIndex;
 use App\Http\Livewire\Dashboard\Categories\Create as CategoriesCreate;
 use App\Http\Livewire\Dashboard\Categories\Edit as CategoriesEdit;
 use App\Http\Livewire\Dashboard\Categories\Index as CategoriesIndex;
+use App\Http\Livewire\Dashboard\Links\Create as LinksCreate;
+use App\Http\Livewire\Dashboard\Links\Edit as LinksEdit;
+use App\Http\Livewire\Dashboard\Links\Index as LinksIndex;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,4 +53,11 @@ Route::prefix('dashboard')->middleware('auth')->group(function (){
     Route::get('categories', CategoriesIndex::class)->name('dashboard.categories');
     Route::get('categories/create', CategoriesCreate::class)->name('dashboard.categories.create');
     Route::get('categories/edit/{category}', CategoriesEdit::class)->name('dashboard.categories.edit');
+
+    Route::get('links', LinksIndex::class)->name('dashboard.links');
+    Route::get('links/create', LinksCreate::class)->name('dashboard.links.create');
+    Route::get('links/edit/{link}', LinksEdit::class)->name('dashboard.links.edit');
 });
+
+
+Route::get('{link:slug}', [LinkShortener::class, 'redirect']);

@@ -182,6 +182,13 @@ return [
         'categoryArr.title' => 'عنوان',
         'categoryArr.slug' => 'نامک',
         'categoryArr.description' => 'توضیحات',
+        'linkArr.title' => 'عنوان',
+        'linkArr.slug' => 'نامک',
+        'linkArr.destination' => 'لینک اصلی',
+        'linkArr.category_id' => 'دسته‌بندی',
+        'linkArr.code' => 'کد',
+        'linkArr.is_active' => 'فعال بودن لینک',
+        'linkArr.description' => 'توضیحات',
         '' => '',
     ],
 
