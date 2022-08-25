@@ -57,9 +57,9 @@
                     </li>
                 @endcan
                 <li class="menu-item">
-                    <a href="">
-                        <svg class="icon"><use xlink:href="#setting"/></svg>
-                        <span class="text">{{ __('menu.settings') }}</span>
+                    <a href="{{ route('logout') }}">
+                        <svg class="icon rotate-180"><use xlink:href="#logout"/></svg>
+                        <span class="text">{{ __('menu.logout') }}</span>
                     </a>
                 </li>
             </ul>
@@ -67,7 +67,7 @@
     </aside>
 </header>
 <main class="mr-[18.5rem] ml-6 my-6">
-    <div class="bg-white border border-neutral-200 rounded-lg px-2 py-3 flex justify-between mb-3">
+    {{--<div class="bg-white border border-neutral-200 rounded-lg px-2 py-3 flex justify-between mb-3">
         <div class="flex items-center space-x-reverse space-x-1.5 text-neutral-500">
             <svg class="icon w-6 h-6"><use xlink:href="#location"/></svg>
             <span class="body-2">پنل کاربری</span>
@@ -77,7 +77,7 @@
         <div>
             <svg class="icon w-6 h-6"><use xlink:href="#logout"/></svg>
         </div>
-    </div>
+    </div>--}}
     {!! $slot !!}
 </main>
 <footer>

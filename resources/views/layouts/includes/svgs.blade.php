@@ -97,5 +97,12 @@
                 d="M2 11.737C2 4.435 4.435 2 11.737 2s9.737 2.435 9.737 9.737-2.435 9.737-9.737 9.737S2 19.039 2 11.737z"
                 stroke-linejoin="round"/>
         </symbol>
+        <symbol id="chart" viewBox="0 0 24 24">
+            <path d="M7.183 9.961v6.694m4.554-9.898v9.898m4.479-3.157v3.157" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+            <path
+                d="M2 11.737C2 4.435 4.435 2 11.737 2s9.737 2.435 9.737 9.737-2.435 9.737-9.737 9.737S2 19.039 2 11.737z"
+                stroke-linejoin="round"/>
+        </symbol>
     </svg>
 </div>

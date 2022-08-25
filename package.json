@@ -16,6 +16,7 @@
     "dependencies": {
         "alpinejs": "^3.10.3",
         "canvas": "^2.9.3",
+        "chart.js": "^3.9.1",
         "qr-code-styling": "^1.6.0-rc.1",
         "sweetalert2": "^11.4.29"
     }

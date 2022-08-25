@@ -16,6 +16,7 @@ use App\Http\Livewire\Dashboard\Categories\Edit as CategoriesEdit;
 use App\Http\Livewire\Dashboard\Categories\Index as CategoriesIndex;
 use App\Http\Livewire\Dashboard\Links\Create as LinksCreate;
 use App\Http\Livewire\Dashboard\Links\Edit as LinksEdit;
+use App\Http\Livewire\Dashboard\Links\Statistics as LinksStatistics;
 use App\Http\Livewire\Dashboard\Links\Index as LinksIndex;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,10 @@ Route::middleware('guest')->group(function (){
     Route::get('forget', Forget::class)->name('forget');
 });
 
+Route::get('logout', function (){
+    auth()->logout();
+})->middleware(['auth'])->name('logout');
+
 Route::prefix('dashboard')->middleware('auth')->group(function (){
     Route::get('', Counter::class)->name('dashboard');
     Route::get('users', UsersIndex::class)->name('dashboard.users');
@@ -57,6 +62,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function (){
     Route::get('links', LinksIndex::class)->name('dashboard.links');
     Route::get('links/create', LinksCreate::class)->name('dashboard.links.create');
     Route::get('links/edit/{link}', LinksEdit::class)->name('dashboard.links.edit');
+    Route::get('links/statistics/{link}', LinksStatistics::class)->name('dashboard.links.statistics');
 });
 
 
