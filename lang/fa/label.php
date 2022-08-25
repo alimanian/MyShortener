@@ -22,5 +22,7 @@ return [
     'link_description' => 'توضیحات (اختیاری)',
     'link_is_active' => 'لینک فعال باشد',
     'link_code' => 'کد ریدایرکت',
+    'role' => 'نقش',
+    'no_role' => 'بدون نقش',
     '' => '',
 ];

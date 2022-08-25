@@ -13,14 +13,19 @@ class UpdateUser
         return $this->userRulesForUpdate($prefix);
     }
 
-    public function update(int $userId, array $params): bool
+    public function update(int $userId, array $params)
     {
-        return UserModel::find($userId)->update([
+        $user = UserModel::find($userId);
+        $user->update([
             'first_name' => $params['first_name'] ?? null,
             'last_name' => $params['last_name'] ?? null,
             'phone_number' => $params['phone_number'],
             'email' => $params['email'] ?? null,
             'is_active' => $params['is_active'] ?? true
         ]);
+
+        if (isset($params['role_id']))
+            $user->roles()->sync($params['role_id']);
+        return $user;
     }
 }

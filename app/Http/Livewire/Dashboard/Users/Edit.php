@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Dashboard\Users;
 use App\Actions\User\UpdateUser;
 use App\Actions\User\UserValidationRule;
 use App\Http\Livewire\Traits\WithToast;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
@@ -21,11 +22,14 @@ class Edit extends Component
         $this->authorize('update-users');
 
         $this->userArr = $user->toArray();
+        $this->userArr['role_id'] = $user->roles()->first()->id ?? null;
     }
 
     public function render()
     {
-        return view('livewire.dashboard.users.edit');
+        return view('livewire.dashboard.users.edit', [
+            'roles' => Role::all()
+        ]);
     }
 
     public function update()

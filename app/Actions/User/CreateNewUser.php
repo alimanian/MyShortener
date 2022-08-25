@@ -15,13 +15,17 @@ class CreateNewUser
 
     public function create(array $params): UserModel
     {
-        return UserModel::create([
+        $user =  UserModel::create([
             'first_name' => $params['first_name'] ?? null,
             'last_name' => $params['last_name'] ?? null,
             'phone_number' => $params['phone_number'],
             'email' => $params['email'] ?? null,
             'password' => $params['password'],
-            'is_active' => $params['is_active'] ?? true
+            'is_active' => $params['is_active'] ?? true,
         ]);
+
+        if (isset($params['role_id']))
+            $user->roles()->attach($params['role_id']);
+        return $user;
     }
 }

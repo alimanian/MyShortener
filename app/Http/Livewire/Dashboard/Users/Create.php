@@ -3,8 +3,10 @@
 namespace App\Http\Livewire\Dashboard\Users;
 
 use App\Actions\User\CreateNewRole;
+use App\Actions\User\CreateNewUser;
 use App\Actions\User\UserValidationRule;
 use App\Http\Livewire\Traits\WithToast;
+use App\Models\Role;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -30,14 +32,16 @@ class Create extends Component
 
     public function render(): Factory|View|Application
     {
-        return view('livewire.dashboard.users.create');
+        return view('livewire.dashboard.users.create', [
+            'roles' => Role::all()
+        ]);
     }
 
     public function create(): Redirector|Application|RedirectResponse
     {
         $this->validate($this->userRulesForRegister($this->prefix));
 
-        (new CreateNewRole())->create($this->userArr);
+        (new CreateNewUser())->create($this->userArr);
 
         $this->toast(trans('toast.Successful user creation'));
         return redirect(route('dashboard.users'));

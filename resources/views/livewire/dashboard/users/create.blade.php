@@ -18,6 +18,15 @@
             <x-input class="ltr text-left" :name="$prefix.'password'" type="password">
                 {{ __('label.password') }}
             </x-input>
+            <div class="w-full">
+                <select class="form-select" aria-label="{{ __('label.role') }}" wire:model.defer="{{ $prefix.'role_id' }}">
+                    <option value="" selected>{{ __('label.no_role') }}</option>
+                    @foreach($roles as $role)
+                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                    @endforeach
+                </select>
+                <x-error :name="$prefix.'role_id'" />
+            </div>
         </section>
         <div class="flex justify-between items-center">
             <x-button class="form-button-primary form-button-small !mb-0 !w-24 max-w-full" type="submit" form="create">
