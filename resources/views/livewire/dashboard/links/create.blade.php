@@ -1,7 +1,7 @@
 <x-box name="dashboard-content" :title="__('heading.Add Link')">
     <x-form wire:submit.prevent="create" class="w-full">
         <section class="flex flex-col sm:flex-row sm:space-x-reverse sm:space-x-3">
-            <x-input class="ltr text-left" :name="$prefix.'destination'" type="text" maxlength="255" autofocus>
+            <x-input class="ltr text-left" :name="$prefix.'destination'" type="text" maxlength="2048" autofocus>
                 {{ __('label.destination') }}
             </x-input>
             <x-input class="ltr text-left" :name="$prefix.'slug'" type="text" maxlength="255">

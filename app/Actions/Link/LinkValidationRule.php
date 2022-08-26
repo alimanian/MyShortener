@@ -10,7 +10,7 @@ trait LinkValidationRule
         $rules = [
             'title' => 'nullable|string|max:255',
             'description' => 'nullable|string|max:1024',
-            'destination' => 'required|string|max:255|url',
+            'destination' => 'required|string|max:2048|url',
             'slug' => 'required|string|alpha_dash|unique:links,slug',
             'category_id' => 'nullable|exists:categories,id',
             'is_active' => 'nullable|boolean',
@@ -25,7 +25,7 @@ trait LinkValidationRule
         $rules = [
             'title' => 'nullable|string|max:255',
             'description' => 'nullable|string|max:1024',
-            'destination' => 'required|string|max:255|url',
+            'destination' => 'required|string|max:2048|url',
             'slug' => 'required|string|alpha_dash|unique:links,slug,' . $linkId,
             'category_id' => 'nullable|exists:categories,id',
             'is_active' => 'nullable|boolean',
