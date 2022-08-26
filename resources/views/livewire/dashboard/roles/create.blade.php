@@ -1,10 +1,10 @@
 <x-box name="dashboard-content" :title="__('heading.Add Role')">
     <x-form wire:submit.prevent="create" class="w-full">
         <section class="flex flex-col sm:flex-row sm:space-x-reverse sm:space-x-3">
-            <x-input :name="$prefix.'name'" type="text" maxlength="40" autofocus>
+            <x-input :name="$prefix.'name'" type="text" maxlength="255" autofocus>
                 {{ __('label.name') }}
             </x-input>
-            <x-input :name="$prefix.'label'" type="text" maxlength="60">
+            <x-input :name="$prefix.'label'" type="text" maxlength="255">
                 {{ __('label.label') }}
             </x-input>
         </section>
