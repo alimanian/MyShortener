@@ -25,7 +25,7 @@ class Create extends Component
 
         $this->linkArr = [];
         $this->linkArr['is_active'] = true;
-        $this->linkArr['code'] = 301;
+        $this->linkArr['code'] = 302;
         $this->linkArr['category_id'] = null;
         $this->linkArr['slug'] = $this->generateRandomStr();
     }
