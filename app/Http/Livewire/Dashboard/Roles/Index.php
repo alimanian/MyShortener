@@ -26,6 +26,7 @@ class Index extends Component
         return view('livewire.dashboard.roles.index', [
             'roles' => RoleModel::where('name', 'LIKE', '%' . $this->search . '%')
                 ->orWhere('label', 'LIKE', '%' . $this->search . '%')
+                ->latest()
                 ->paginate(10),
         ]);
     }

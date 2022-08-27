@@ -38,9 +38,9 @@ class VerifyCode extends Notification
 
     public function getData(): array
     {
-        foreach ($this->data as $key => $value){
+        foreach ($this->data as $key => $value)
             $this->data[$key] =  str_replace(' ', '‌', $value);
-        }
+
         return $this->data;
     }
 }

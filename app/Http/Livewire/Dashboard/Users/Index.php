@@ -29,6 +29,7 @@ class Index extends Component
                 ->orWhere('last_name', 'LIKE', '%' . $this->search . '%')
                 ->orWhere('email', 'LIKE', '%' . $this->search . '%')
                 ->orWhere('phone_number', 'LIKE', '%' . $this->search . '%')
+                ->latest()
                 ->paginate(10),
         ]);
     }

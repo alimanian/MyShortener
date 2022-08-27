@@ -27,6 +27,7 @@ class Index extends Component
             'categories' => CategoryModel::where('title', 'LIKE', '%' . $this->search . '%')
                 ->orWhere('slug', 'LIKE', '%' . $this->search . '%')
                 ->orWhere('description', 'LIKE', '%' . $this->search . '%')
+                ->latest()
                 ->paginate(10),
         ]);
     }

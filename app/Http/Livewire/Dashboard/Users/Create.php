@@ -44,6 +44,7 @@ class Create extends Component
         (new CreateNewUser())->create($this->userArr);
 
         $this->toast(trans('toast.Successful user creation'));
+
         return redirect(route('dashboard.users'));
     }
 }

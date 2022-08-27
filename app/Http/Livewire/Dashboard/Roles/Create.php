@@ -33,7 +33,7 @@ class Create extends Component
     public function create()
     {
         if (isset($this->roleArr['permissions']))
-            $this->roleArr['permissions_keys'] =  array_keys($this->roleArr['permissions'], true);
+            $this->roleArr['permissions_keys'] = array_keys($this->roleArr['permissions'], true);
 
         $this->validate($this->roleRulesForCreate($this->prefix));
 

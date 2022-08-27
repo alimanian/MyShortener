@@ -13,9 +13,9 @@ class KavenegarChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        if(! method_exists($notification, 'getData')){
+        if(! method_exists($notification, 'getData'))
             throw new Exception('getData Method Not Found!');
-        }
+
 
         $data = $notification->getData();
 

@@ -28,6 +28,7 @@ class Index extends Component
                 ->orWhere('slug', 'LIKE', '%' . $this->search . '%')
                 ->orWhere('description', 'LIKE', '%' . $this->search . '%')
                 ->orWhere('destination', 'LIKE', '%' . $this->search . '%')
+                ->latest()
                 ->paginate(10),
         ]);
     }
