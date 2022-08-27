@@ -1,0 +1,6 @@
+.env
+.idea/
+bootstrap/
+storage/
+node_modules/
+vendor/
