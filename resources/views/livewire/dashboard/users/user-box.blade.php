@@ -12,7 +12,7 @@
         {{ $user->phone_number }}
     </td>
     <td class="px-6 py-4 text-center">
-        {{ $user->roles()->first()->name }}
+        {{ $user->roles()->first()->name ?? '' }}
     </td>
     <td class="px-6 py-4 flex justify-center items-center space-x-reverse space-x-1">
         @can('update-users')
