@@ -13,5 +13,6 @@ return [
     'Destination' => 'مقصد',
     'Number of clicks' => 'کلیک',
     'Category' => 'دسته‌بندی',
+    'Role' => 'نقش',
     '' => '',
 ];

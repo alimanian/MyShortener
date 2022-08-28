@@ -29,7 +29,7 @@
                 {{ __('table.Phone Number') }}
             </th>
             <th scope="col" class="px-6 py-3 text-center">
-                {{ __('table.Email') }}
+                {{ __('table.Role') }}
             </th>
             <th scope="col" class="px-6 py-3 text-center">
                 {{ __('table.Actions') }}
